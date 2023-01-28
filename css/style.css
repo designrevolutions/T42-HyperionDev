@@ -1,0 +1,483 @@
+/* I got the main code part from here: https://codepen.io/kevinpowell/pen/PWNwZm
+I wanted a hamburger mobile icom on the top right and wanted to avoid having 2 sets of navigations - all examples I could find had 2 sets of navigations
+This one has one set of naviation - so if making changes, it will be easier to fix --> */
+
+/* colors -> https://coolors.co/e54b4b-ebebd3-464655-e4b363-e8e9eb */
+
+/* Added Tue 24 Jan 2023, 2141 */
+/* ######################## */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.95); /* 0.8 is 80% opaque */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* I want to make the writing colour white */
+  color: white;
+
+  /* We start off with having zero visibility */
+  display: none;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  text-align: center;
+}
+/* ######################## */
+
+/* ---------------------------------------------------------------------------------- */
+/* Above is for mobile */
+/* ---------------------------------------------------------------------------------- */
+/* Below is for desktop */
+/* ---------------------------------------------------------------------------------- */
+
+/* I added this. box-sizing ensures that we are incotrol of content measurements and adding or 
+removing padding and margin does not have unexpected results that need dealing with  */
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* I had to add the below because the bootstrap css was giving different styling of h1 */
+/* h1 {
+  font-size: 200%;
+  font-weight: 600;  
+  margin-top: 2%;
+} */
+
+body {
+  background: #f0f8ea;
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  /* I've left this out. I may change later, so keeping for the moment */
+  /* max-width: 1000px; */
+}
+
+.width {
+  /* Intentionally I have set to be 80vw */
+  width: 80vw;
+
+  /* Adds zero margin top and bottom, but makes content be central */
+  margin: 0 auto;
+
+  /* I wanted to have a relative small width - taking up the whole screen width is demanding for content - unless  you can do it well, don't do it! */
+  max-width: 800px;
+}
+
+header {
+  background: darkgray;
+  color: #ebebd3;
+  padding: 1em 0;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.logo {
+  float: left;
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+.site-nav {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  background: #464655;
+  clip-path: circle(0px at top right);
+  transition: clip-path ease-in-out 700ms;
+  /*   display: none; */
+}
+
+.site-nav--open {
+  clip-path: circle(150% at top right);
+  /*   display: block; */
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  border-bottom: 1px solid #575766;
+}
+
+.site-nav li:last-child {
+  border-bottom: none;
+}
+
+.site-nav a {
+  color: #ebebd3;
+  display: block;
+  padding: 2em 4em 2em 1.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: #e4b363;
+  color: #464655;
+}
+
+.site-nav--icon {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: 1em;
+  width: 1.1em;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-toggle {
+  padding: 1em;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  background: #ebebd3;
+  height: 3px;
+  width: 1.75em;
+  border-radius: 3px;
+  transition: all ease-in-out 500ms;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.open .hamburger {
+  transform: rotate(45deg);
+}
+
+.open .hamburger::before {
+  opacity: 0;
+}
+
+.open .hamburger::after {
+  transform: translateY(-3px) rotate(-90deg);
+}
+
+.redtext {
+  color: red;
+}
+
+/* I wanted my images to be in the middle - regardless of how many are on one line - the contents should be in the middle */
+.imagegallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image {
+  flex: 0 0 auto; /* This prevents the images from growing or shrinking when the container is resized */
+  margin: 10px;
+}
+
+/* ##### Start of testimonial code ##### */
+/* Add media queries for responsiveness. This will center both the text and the image inside the testimonial */
+/* Kevin Powells code for mobile is given first and desktop given after */
+/* https://www.w3schools.com/howto/howto_css_testimonials.asp - this is where I got the code from */
+.testimonial {
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.testimonial img {
+  margin: auto;
+  float: none;
+  display: block;
+}
+/* ##### End of testimonial code ##### */
+
+/* #### Start of table code #### */
+.table {
+  display: flex;
+}
+
+.column {
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.row {
+  border: 1px black solid;
+  height: 3em;
+  margin: auto;
+  width: 100%;
+}
+/* #### End of table code #### */
+
+.mytextarea {
+  width: 80vw;
+}
+
+#mybackground1 {
+  background-image: url("../images/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  border-style: dashed;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  margin: 10px;
+}
+
+#mybackground2 {
+  background-image: url("../images/background2.jpg");
+  background-size: cover;
+  background-position: center;
+  border-style: dashed;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  margin: 10px;
+}
+
+#like_save {
+  /* text-align:right; */
+}
+
+footer {
+  clear: both;
+}
+
+.spacer {
+  height: 10px;
+}
+
+.spacer {
+  height: 5vh;
+}
+
+.candidate_form {
+  width: 50%;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.comments_left_div {
+  background-color: #f0f0f0;
+  width: 100%;
+  border: 1px solid grey;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Below is for bigger screens */
+@media (min-width: 600px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    clip-path: initial;
+  }
+
+  .site-nav li {
+    display: inline-block;
+    border: none;
+  }
+
+  .site-nav a {
+    padding: 0;
+    margin-left: 0.5em;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: transparent;
+  }
+
+  .site-nav--icon {
+    display: none;
+  }
+
+  /* ##### Start of testimonial code ##### */
+  /* https://www.w3schools.com/howto/howto_css_testimonials.asp - this is where I got the code from */
+  /* Style the container with a rounded border, grey background and some padding and margin */
+  .testimonial {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0;
+    font-size: 1rem;
+  }
+
+  /* Clear floats after containers */
+  .testimonial::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Float images inside the container to the left. Add a right margin, and style the image as a circle */
+  .testimonial img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+  /* Increase the font-size of a span element */
+  .testimonial span {
+    font-size: 20px;
+    margin-right: 15px;
+  }
+
+  /* ##### End of testimonial code ##### */
+
+  /* #### Start of table code #### */
+  .table {
+    display: flex;
+  }
+
+  .column {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+
+  .row {
+    border: 1px black solid;
+    height: 3em;
+    margin: auto;
+    width: 100%;
+  }
+  /* #### End of table code #### */
+
+  .mytextarea {
+    width: 50%;
+  }
+
+  #mybackground1 {
+    background-image: url("../images/background1.jpg");
+    background-size: cover;
+    background-position: center;
+    border-style: dashed;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1em;
+    margin: 10px;
+  }
+
+  #mybackground2 {
+    background-image: url("../images/background2.jpg");
+    background-size: cover;
+    background-position: center;
+    border-style: dashed;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    margin: 10px;
+  }
+
+  .like_save {
+    /* text-align:right; */
+    /* I'm controlling the alignment in Javascript now */
+  }
+
+  footer {
+    clear: both;
+  }
+
+  .spacer {
+    height: 5vh;
+  }
+
+  .candidate_form {
+    width: 50%;
+    display: inline-block;
+    margin: 10px 0;
+  }
+
+  .comments_left_div {
+    background-color: #f0f0f0;
+    width: 100%;
+    border: 1px solid grey;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Added Tue 24 Jan 2023, 2141 */
+  /* ######################## */
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.95); /* 0.8 is 80% opaque */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* I want to make the writing colour white */
+    color: white;
+
+    /* We start off with having zero visibility */
+    display: none;
+  }
+
+  .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    text-align: center;
+  }
+  /* ######################## */
+}

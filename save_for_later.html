@@ -1,0 +1,70 @@
+<!-- I got the main code part from here: https://codepen.io/kevinpowell/pen/PWNwZm
+I wanted a hamburger mobile icom on the top right and wanted to avoid having 2 sets of navigations - all examples I could find had 2 sets of navigations
+This one has one set of naviation - so if making changes, it will be easier to fix -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container width">
+        <h1 class="logo">
+          Mastermind<span>Ecommerce</span><span class="redtext">.Team</span>
+        </h1>
+
+        <nav class="site-nav">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="candidate_ideas.html">Candidate Ideas</a>
+            </li>
+            <li>
+              <a href="save_for_later.html">Save for Later</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="menu-toggle">
+          <div class="hamburger"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="width">
+      <div>
+        <h1>Save for Later</h1>
+        <p>
+          In this page, you'll see items that you have saved for later. Anything you have chosen to 'save for later' as you have browsed the website, you'll see below.
+        </p>
+      </div>
+      <div>
+        <h2>Save for Later items</h2>
+        <ul id="save_for_later_id">
+          <!-- li's will be filled in usig Javascript -->
+        </ul>
+      </div>
+      <div>
+    </main>
+
+    <footer class="width">
+      <p>Copyright 2022</p>
+    </footer>
+
+    <!-- These are needed to make the animation for the menu frop down for mobile -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/js.js"></script>
+    <script src="js/save_for_later.js"></script>
+  </body>
+</html>

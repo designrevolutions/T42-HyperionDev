@@ -1,0 +1,132 @@
+<!-- I got the main code part from here: https://codepen.io/kevinpowell/pen/PWNwZm
+I wanted a hamburger mobile icom on the top right and wanted to avoid having 2 sets of navigations - all examples I could find had 2 sets of navigations
+This one has one set of naviation - so if making changes, it will be easier to fix -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Candi Donuts - Churros meets Dunking Donuts</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container width">
+        <h1 class="logo">
+          Mastermind<span>Ecommerce</span><span class="redtext">.Team</span>
+        </h1>
+
+        <nav class="site-nav">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="candidate_ideas.html">Candidate Ideas</a>
+            </li>
+            <li>
+              <a href="save_for_later.html">Save for Later</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="menu-toggle">
+          <div class="hamburger"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="width">
+      <div>
+        <h1>Candi Donuts</h1>
+        <p>
+          After reading below, if yo ulike what you read and want to join the team to promote the business, please contact.
+        </p>
+      </div>
+      <div>
+        <h2>A new age delicatessen, proof that donuts don't have to be round</h2>
+        <a href="javascript:history.back()">Go Back</a>
+
+        <p><strong>Churros and Dough balls from heaven!</strong></p>
+        <div class="imagegallery">
+          <img class="image" alt="Churros 1" src="images/Candi-Donuts-Carnival-Churros-About-Us-Page.jpg">
+          <img class="image" alt="Churros 1" src="images/Candi-Donuts-Churrs-Dip-About-Us-Page.jpg">
+          <img class="image" alt="Churros 1" src="images/Candi-Donuts-Designer-Churos-About-Us-Page.jpg">
+          <img class="image" alt="Churros 1" src="images/Honey-Puffs.jpg">
+        </div>
+        <p>
+          In 20 years, Andy has a made a one man band business selling fried
+          donuts. This has evolved into churros - born in Brazil, similar to
+          doughnuts but long with an empty centre that can be filled with
+          fillings.
+        </p>
+        <p>
+          Andy has crafted and blended to make his own secret recipe. He sells
+          on his website
+          <a href="https://candidonut.com" target="_blank">Candi Donut</a> and
+          targets wholesale customers.
+        </p>
+        <p>
+          <strong>The challenge:</strong> take Andy's business and sell to
+          retail. Currently he runs a trailer, van and shop - all by himself.
+          He's not selling directly to Joe Public. We can enhance his reach to
+          wholesale customers and target directly through advertising.
+          Currently, his business comes mostly as a result of word of mouth.
+        </p>
+
+        <div class="testimonial">
+          <img
+            src="images/omar.jpg"
+            alt="Omar's Testimonial"
+            style="width: 90px"
+          >
+          <p><span>Omar Miah.</span> CEO at design Revolutions.</p>
+          <p>Candidonuts is the perfect business to invest in.</p>
+        </div>
+
+        <div id="like_save">
+          <!-- The contents of this DIV are right justified. We'll have a 'save for later' link and a like button that can be toggled on an off. The save for later will be 
+          coded into javascript. The liking otggling will also be coded into Javascript. -->
+          
+          <!-- I'm going to code the content for this section into Javascript. -->
+        </div>
+
+        <div class="spacer"></div>
+
+        <div id="comments">
+          <!-- Here I will store comments left by users. This needs to be write once only. Should be simple to code. -->
+          <p>We'd love to hear what you thought of the candidate idea above. Please leave your comments below.</p>
+          <!-- <form> -->
+            <div class="form-group">
+              <textarea style="width:100%" name="comment" rows="5" id="user_comment" placeholder="Leave your comment here" required></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Submit" id="comment_submit_button" style="float:right">
+            </div>
+          <!-- </form> -->
+        </div>
+
+        <div class="spacer"></div>
+
+        <div id="comments_left">
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="width">
+      <p>Copyright 2022</p>
+    </footer>
+
+    <!-- These are needed to make the animation for the menu frop down for mobile -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/js.js"></script>
+    <script src="js/candidate_ideas.js"></script>
+  </body>
+</html>

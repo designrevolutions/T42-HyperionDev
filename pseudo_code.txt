@@ -1,0 +1,38 @@
+1. Take existing website made in Task 29 and copy files across
+DONE.
+
+2. I need to read up on Javascript local storage. Watch a few videos and ask ChatGPT for some example code.
+DONE. Fairly simple, espcially when you've used sessionStorage. It's similar. DONE.
+
+2. Create a 'Save for Later' page.
+Make some dummy entries into localstorage.
+This will read in from Javascript localstorage.
+I need to design a layout for this page. Use Grid to space out content. Forget this. Too much time needed. Just make 1 per line for entry.
+Add a delete button for each article link.
+DONE.
+
+I'll use an unorderd list. DONE.
+Remember: to use index - needed for deleting. DONE.
+
+3. Add code on articles - like a footer on the article - to 'Save for Later'.
+When an article loads, if the article has been saved, it should display a different message if it has been saved: 'This page has been saved' - if its' been saved.
+If not saved, it should say 'Save for Later + tickbox'. If the tickbox is clicked again, then the article is removed from the localstorage.
+DONE. This was a lot of headache. The code was OK, but something was wrong. It turned out that reading the localstorage returns a null if there is nothing in it. 
+I had to write an if statement to cope with this.
+
+4. When an item is saved, the user should be told how many items are saved in their saved folder. 
+(Try having a dissapering popup - but don't spend time on this) Forget this idea.
+Add a text space next to the button. Use this to display how many items have been saved. Code from Javascript.
+DONE.
+
+5. I need to have a plan for how the localstorage structure will be - need an object with name and link.
+DONE. This got done early on in the coding.
+
+6. Have a comments section on all articles. This should be hidden at first, with a 'Leave Comment' link showing. 
+When clicked, you can then see a form to leave a comment.
+
+7. Add a like option for aritcles. This should be easy.
+Have icons for like and dislike. Localstorage stores if a like or dislike has been stored.
+// This should be the same exact logic as the save page. Repeat all again 🙂
+
+8. Make a contact form. I think this needs to be a dummy form. Try and make it look fancy.

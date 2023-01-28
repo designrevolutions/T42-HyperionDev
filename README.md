@@ -26,7 +26,14 @@ The HTML works on it's own. Data is saved in your browser storage allocation for
 
 ## Screenshots
 
-See below for screenshots of the code in action
+See below for screenshots of the code in action.
+
+![Screenshot 1](https://github.com/designrevolutions/T42-HyperionDev/blob/master/screenshots/screenshot_1.png)
+
+![Screenshot 2](https://github.com/designrevolutions/T42-HyperionDev/blob/master/screenshots/screenshot_2.png)
+
+![Screenshot 3](https://github.com/designrevolutions/T42-HyperionDev/blob/master/screenshots/screenshot_3.png)
+
 
 ## Credits
 
